@@ -35,3 +35,12 @@ if (contactForm) {
     }
   });
 }
+
+const menuButton = document.querySelector(".menu-button");
+const siteNav = document.querySelector(".site-nav");
+
+if (menuButton && siteNav) {
+  menuButton.addEventListener("click", () => {
+    siteNav.classList.toggle("is-open");
+  });
+}
