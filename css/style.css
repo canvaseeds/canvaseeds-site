@@ -404,83 +404,54 @@ a {
 }
 
 /* スマホ対応 */
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
   .site-header {
-    align-items: flex-start;
-    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     flex-wrap: wrap;
+    padding: 12px 20px;
+  }
+
+  .site-logo {
+    flex: 1;
+  }
+
+  .site-logo img {
+    width: 44px;
+    height: 44px;
   }
 
   .menu-button {
     display: block;
-    margin-left: auto;
+    padding: 8px 14px;
+    border: 1px solid var(--main-color);
+    border-radius: 6px;
+    background: #ffffff;
+    color: var(--main-dark);
+    font-weight: bold;
+    cursor: pointer;
   }
 
   .site-nav {
     display: none;
     width: 100%;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    align-items: stretch;
+    gap: 0;
+    margin-top: 12px;
     padding-top: 12px;
+    border-top: 1px solid var(--border-color);
+    background: #ffffff;
   }
 
   .site-nav.is-open {
     display: flex;
   }
 
-  .hero {
-    min-height: 440px;
-  }
-
-  .hero h1 {
-    font-size: 28px;
-  }
-
-  .hero p {
-    font-size: 16px;
-  }
-
-  .page-hero {
-    padding: 56px 20px;
-  }
-
-  .page-hero h1 {
-    font-size: 28px;
-  }
-
-  .section {
-    padding: 56px 20px;
-  }
-
-  .section h2 {
-    font-size: 24px;
-  }
-
-  .card-list,
-  .value-list,
-  .flow-list,
-  .contact-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .report-item,
-  .blog-item,
-  .member-card {
-    grid-template-columns: 1fr;
-  }
-
-  .member-card img {
-    width: 140px;
-    height: 140px;
-  }
-
-  .cta-buttons {
-    flex-direction: column;
-  }
-
-  .button {
-    width: 100%;
-    text-align: center;
+  .site-nav a {
+    display: block;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
   }
 }
