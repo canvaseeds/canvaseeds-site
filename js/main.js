@@ -86,7 +86,3 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.addEventListener("contextmenu", (event) => {
-  event.preventDefault();
-});
-
