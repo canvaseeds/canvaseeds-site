@@ -22,6 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
         top: 0,
         behavior: "smooth"
       });
+
+      document.documentElement.scollTop=0;
+      document.body.scollTop=0;
     });
   }
 
