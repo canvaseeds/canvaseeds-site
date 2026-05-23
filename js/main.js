@@ -86,4 +86,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const protectedImages = document.querySelectorAll("img");
+
+  protectedImages.forEach((image) => {
+    image.setAttribute("draggable", "false");
+
+    image.addEventListener("contextmenu", (event) => {
+      event.preventDefault();
+    });
+  });
+});
 
