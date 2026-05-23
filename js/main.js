@@ -44,3 +44,32 @@ if (menuButton && siteNav) {
     siteNav.classList.toggle("is-open");
   });
 }
+
+document.addEventListener(
+'contextmenu',
+e=>e.preventDefault()
+);
+
+const images = document.querySelectorAll("img");
+
+images.forEach((image) => {
+  image.addEventListener("contextmenu", (event) => {
+    event.preventDefault();
+  });
+});
+
+const siteImages = document.querySelectorAll("img");
+
+siteImages.forEach((image) => {
+  image.setAttribute("draggable", "false");
+});
+
+const protectedImages = document.querySelectorAll("img");
+
+protectedImages.forEach((image) => {
+  image.setAttribute("draggable", "false");
+
+  image.addEventListener("contextmenu", (event) => {
+    event.preventDefault();
+  });
+});
