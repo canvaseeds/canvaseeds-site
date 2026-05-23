@@ -4,19 +4,15 @@
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-
 <loc>
-https://canvaseeds.netlify.app/
+https://canvaseeds.github.io/canvaseeds-site/
 </loc>
-
 </url>
 
 <url>
-
 <loc>
-https://canvaseeds.netlify.app/about.html
+https://canvaseeds.github.io/canvaseeds-site/about.html
 </loc>
-
 </url>
 
 </urlset>

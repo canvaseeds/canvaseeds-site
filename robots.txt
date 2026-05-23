@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 Sitemap:
-https://canvaseeds430.netlify.app/sitemap.xml
+https://canvaseeds.github.io/canvaseeds-site/sitemap.xml
