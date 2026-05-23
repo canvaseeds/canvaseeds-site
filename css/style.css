@@ -542,3 +542,81 @@ img {
     font-size: 22px;
   }
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 16px;
+  }
+
+  .section-inner {
+    width: 100%;
+  }
+
+  .section h2 {
+    font-size: 22px;
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+
+  .section-lead,
+  .card p,
+  .news-item p,
+  .blog-item p,
+  .report-item p,
+  .member-card p,
+  .contact-box p,
+  .faq-item p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .card,
+  .news-item,
+  .blog-item,
+  .member-card,
+  .report-item,
+  .contact-box,
+  .faq-item {
+    padding: 18px;
+  }
+
+  .card h3,
+  .news-item h3,
+  .blog-item h3,
+  .report-item h3,
+  .member-card h3,
+  .contact-box h3 {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-list,
+  .member-list,
+  .blog-list,
+  .report-list,
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .report-item,
+  .blog-item,
+  .member-card {
+    display: block;
+  }
+
+  .report-item img,
+  .blog-item img {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .member-card img {
+    margin: 0 auto 16px;
+  }
+}
+
