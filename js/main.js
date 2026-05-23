@@ -98,3 +98,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const menuButton = document.querySelector(".menu-button");
+  const siteNav = document.querySelector(".site-nav");
+
+  if (menuButton && siteNav) {
+    menuButton.addEventListener("click", () => {
+      siteNav.classList.toggle("is-open");
+
+      const isOpen = siteNav.classList.contains("is-open");
+      menuButton.setAttribute("aria-expanded", isOpen);
+      menuButton.textContent = isOpen ? "閉じる" : "メニュー";
+    });
+  }
+});

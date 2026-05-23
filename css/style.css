@@ -461,3 +461,59 @@ img {
   -webkit-user-drag: none;
   pointer-events: none;
 }
+
+.menu-button {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 12px 20px;
+  }
+
+  .site-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .site-logo img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .menu-button {
+    display: block;
+    padding: 8px 14px;
+    border: 1px solid var(--main-color);
+    border-radius: 6px;
+    background: #ffffff;
+    color: var(--main-dark);
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .site-nav {
+    display: none;
+    width: 100%;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-color);
+    background: #ffffff;
+  }
+
+  .site-nav.is-open {
+    display: block;
+  }
+
+  .site-nav a {
+    display: block;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+    text-decoration: none;
+  }
+}
