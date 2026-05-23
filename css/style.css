@@ -620,3 +620,76 @@ img {
   }
 }
 
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 12px 0;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.guideline-list {
+  display: grid;
+  gap: 16px;
+}
+
+.guideline-card {
+  display: block;
+  padding: 24px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.guideline-card:hover {
+  border-color: var(--main-color);
+  background: var(--sub-color);
+}
+
+.guideline-card h3 {
+  margin: 0 0 8px;
+  color: var(--main-dark);
+}
+
+.guideline-card p {
+  margin: 0;
+  color: var(--light-text);
+}
+
+.menu-button {
+  display: block;
+  padding: 8px 14px;
+  border: 1px solid var(--main-color);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--main-dark);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.site-nav {
+  display: none;
+  width: 100%;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+  background: #ffffff;
+}
+
+.site-nav.is-open {
+  display: block;
+}
+
+.site-nav a {
+  display: block;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-color);
+  text-decoration: none;
+}
