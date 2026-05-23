@@ -633,36 +633,37 @@ img {
   text-decoration: underline;
 }
 
-.guideline-list {
-  display: grid;
-  gap: 16px;
+.guidelines-list {
+    display: flex;          /* カード横並び */
+    gap: 20px;              /* カード間のスペース */
+    flex-wrap: wrap;        /* 幅が足りないとき折り返す */
 }
 
 .guideline-card {
-  display: block;
-  padding: 24px;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  background: var(--white);
-  color: var(--text-color);
-  text-decoration: none;
+    display: block;
+    background-color: #f4fff0; /* 薄い若葉色 */
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: left;      /* ← これが左揃え */
+    text-decoration: none; /* リンクの下線消す */
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
 }
 
 .guideline-card:hover {
-  border-color: var(--main-color);
-  background: var(--sub-color);
+    transform: translateY(-3px);
 }
 
 .guideline-card h3 {
-  margin: 0 0 8px;
-  color: var(--main-dark);
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .guideline-card p {
-  margin: 0;
-  color: var(--light-text);
+    margin: 0;
 }
-
 .menu-button {
   display: block;
   padding: 8px 14px;
