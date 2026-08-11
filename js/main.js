@@ -4,12 +4,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const siteNav = document.querySelector(".site-nav");
 
   if (menuButton && siteNav) {
+    const closeMenu = () => {
+      siteNav.classList.remove("is-open");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.textContent = "メニュー";
+    };
+
     menuButton.addEventListener("click", () => {
       siteNav.classList.toggle("is-open");
 
       const isOpen = siteNav.classList.contains("is-open");
       menuButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
       menuButton.textContent = isOpen ? "閉じる" : "メニュー";
+    });
+
+    siteNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
     });
   }
 
@@ -23,8 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
         behavior: "smooth"
       });
 
-      document.documentElement.scollTop=0;
-      document.body.scollTop=0;
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
     });
   }
 

@@ -14,7 +14,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="きゃんばしーず（Canvaseeds）は、未来あるこどもたちにわくわくする経験を届ける学生団体です。">
-  <meta property="og:site_name" content="きゃんばしーず / anvaseeds">
+  <meta property="og:site_name" content="きゃんばしーず / Canvaseeds">
   <meta property="og:title" content="きゃんばしーず / Canvaseeds">
   <meta property="og:description" content="きゃんばしーず（Canvaseeds）は、未来あるこどもたちにわくわくする経験を届ける学生団体です。">
   <script type="application/ld+json">
@@ -37,7 +37,7 @@
     <span>きゃんばしーず</span>
   </a>
 
- <button class="menu-button" type="button" aria-expanded="false">
+ <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
   メニュー
 </button>
 
@@ -57,19 +57,29 @@
       <img src="images/hero.jpg" alt="こども支援活動の様子" class="hero-image">
 
       <div class="hero-text">
+        <p class="hero-label""left-text">きゃんばしーず</p>
         <h1>未来あるこどもたちに<br>
           わくわくする経験を</h1>
-        <a href="about.html" class="button">わたしたちについて</a>
+        <p class="hero-lead">
+          生まれた環境に関わらず、こどもたちが新しい体験や人とのつながりに出会える場を、学生の力でつくっています。
+        </p>
+        <div class="hero-actions">
+          <a href="about.html" class="button">わたしたちについて</a>
+          <a href="activities.html" class="button button-outline">活動を見る</a>
+        </div>
       </div>
     </section>
 
     <!-- 3. 団体の理念 -->
     <section class="section philosophy">
       <div class="section-inner">
-        <h2>団体の理念</h2>
-        <p>
-          「生まれた環境に関わらず、すべてのこどもたちが未来にわくわくする社会を学生の力でつくる。」
-        </p>
+        <div class="message-panel">
+          <span class="section-kicker">Our Philosophy</span>
+          <h2>団体の理念</h2>
+          <p>
+            「生まれた環境に関わらず、すべてのこどもたちが未来にわくわくする社会を学生の力でつくる。」
+          </p>
+        </div>
       </div>
     </section>
 
@@ -81,7 +91,7 @@
           地域とつながりながら、こどもたちの学び・居場所・体験を支える活動を行っています。
         </p>
 
-        <div class="card-list">
+        <div class="card-list feature-list">
           <article class="card">
             <img src="images/activity-study.jpg" alt="まなぶの様子">
             <h3>まなぶ</h3>
@@ -109,19 +119,17 @@
     <section class="section news-section">
       <div class="section-inner">
         <h2>最新ニュース</h2>
-          <div class="card-list">
-             <article class="news-item">
-               <div class="news-meta">
-                 <time datetime="2026-05-22">2026.05.22</tim >
-                 <span class="news-category">お知らせ</span>
-              </div>
-                 <h3>公式ホームページ開設しました</h3>
-                 <p>
-                   活動の様子や今後のお知らせを発信するため、公式ホームページを開設しました。
-                  </p>
-              </article>   
-        </div>
-
+        <div class="news-list compact-list">
+          <article class="news-item">
+            <div class="news-meta">
+              <time datetime="2026-05-22">2026.05.22</time>
+              <span class="news-category">お知らせ</span>
+            </div>
+            <h3>公式ホームページを開設しました</h3>
+            <p>
+              活動の様子や今後のお知らせを発信するため、公式ホームページを開設しました。
+            </p>
+          </article>
         </div>
 
         <a href="news.html" class="text-link">ニュース一覧を見る</a>
@@ -132,6 +140,23 @@
     <section class="section">
       <div class="section-inner">
         <h2>最近の活動報告</h2>
+        
+            <a href="blog.html" class="text-link">ブログを見る</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="section-inner">
+        <h2>一緒にできることを話してみませんか</h2>
+        <p>
+            連携の相談、取材など、お気軽にお問い合わせください。
+        </p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="button">お問い合わせ</a>
+          <a href="members.html" class="button button-sub">メンバー紹介</a>
+        </div>
       </div>
     </section>
 
