@@ -57,9 +57,8 @@
       <img src="images/hero.jpg" alt="こども支援活動の様子" class="hero-image">
 
       <div class="hero-text">
-        <p class="hero-label""left-text">きゃんばしーず</p>
-        <h1>未来あるこどもたちに<br>
-          わくわくする経験を</h1>
+        <p class="hero-label left-text">きゃんばしーず</p>
+        <h1>わくわくをこどもたちと</h1>
         <p class="hero-lead">
           生まれた環境に関わらず、こどもたちが新しい体験や人とのつながりに出会える場を、学生の力でつくっています。
         </p>
@@ -77,7 +76,7 @@
           <span class="section-kicker">Our Philosophy</span>
           <h2>団体の理念</h2>
           <p>
-            「生まれた環境に関わらず、すべてのこどもたちが未来にわくわくする社会を学生の力でつくる。」
+            「学生の力で、すべてのこどもたちが未来にわくわくできる社会をつくる」
           </p>
         </div>
       </div>
@@ -119,17 +118,7 @@
     <section class="section news-section">
       <div class="section-inner">
         <h2>最新ニュース</h2>
-        <div class="news-list compact-list">
-          <article class="news-item">
-            <div class="news-meta">
-              <time datetime="2026-05-22">2026.05.22</time>
-              <span class="news-category">お知らせ</span>
-            </div>
-            <h3>公式ホームページを開設しました</h3>
-            <p>
-              活動の様子や今後のお知らせを発信するため、公式ホームページを開設しました。
-            </p>
-          </article>
+        <div class="news-list compact-list" data-cms-list="news" data-cms-limit="3" data-cms-featured="true" data-cms-empty="お知らせはまだありません。">
         </div>
 
         <a href="news.html" class="text-link">ニュース一覧を見る</a>
@@ -140,10 +129,9 @@
     <section class="section">
       <div class="section-inner">
         <h2>最近の活動報告</h2>
-        
-            <a href="blog.html" class="text-link">ブログを見る</a>
-          </div>
+        <div class="report-list compact-list" data-cms-list="activity" data-cms-limit="2" data-cms-featured="true" data-cms-empty="活動報告はまだありません。">
         </div>
+        <a href="activities.html" class="text-link">活動報告一覧を見る</a>
       </div>
     </section>
 
@@ -189,6 +177,8 @@
   </footer>
 
 <button class="top-button" type="button" aria-label="ページ上部へ戻る">↑</button>
+  <script src="js/cms-data.js"></script>
+  <script src="js/cms-render.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>投稿CMS | きゃんばしーず</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <a href="index.html" class="site-logo">
+      <img src="images/logo.png" alt="団体ロゴ">
+      <span>きゃんばしーず</span>
+    </a>
+
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
+      メニュー
+    </button>
+
+    <nav class="site-nav" id="site-nav">
+      <a href="index.html">ホーム</a>
+      <a href="news.html">ニュース</a>
+      <a href="activities.html">活動内容</a>
+      <a href="blog.html">ブログ</a>
+      <a href="members.html">メンバー紹介</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="section-inner">
+        <h1>投稿CMS</h1>
+        <p>
+          ニュースと活動報告の投稿データをまとめて管理するための編集補助ページです。
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner cms-editor">
+        <div class="contact-box">
+          <h2>投稿を追加</h2>
+          <form class="contact-form" id="cms-form">
+            <label>
+              種別
+              <select id="cms-type" required>
+                <option value="news">ニュース</option>
+                <option value="activity">活動報告</option>
+              </select>
+            </label>
+
+            <label>
+              日付
+              <input type="date" id="cms-date" required>
+            </label>
+
+            <label>
+              カテゴリ
+              <input type="text" id="cms-category" placeholder="お知らせ">
+            </label>
+
+            <label>
+              タイトル
+              <input type="text" id="cms-title" required>
+            </label>
+
+            <label>
+              概要
+              <textarea id="cms-excerpt" rows="5" required></textarea>
+            </label>
+
+            <label>
+              詳細ページURL
+              <input type="text" id="cms-url" placeholder="news/news-20260525.html">
+            </label>
+
+            <label>
+              画像URL
+              <input type="text" id="cms-image" placeholder="images/activity-event.jpg">
+            </label>
+
+            <label>
+              画像の説明
+              <input type="text" id="cms-alt" placeholder="活動の様子">
+            </label>
+
+            <label class="cms-checkbox">
+              <input type="checkbox" id="cms-featured" checked>
+              トップページに表示する
+            </label>
+
+            <div class="cta-buttons">
+              <button type="submit" class="button">追加する</button>
+              <button type="button" class="button button-sub" id="cms-reset">初期データに戻す</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="contact-box">
+          <h2>投稿一覧</h2>
+          <div class="cms-admin-list" id="cms-admin-list"></div>
+        </div>
+
+        <div class="contact-box">
+          <h2>生成データ</h2>
+          <p>
+            下の内容を <strong>js/cms-data.js</strong> に反映すると、ニュース・活動報告・トップページが更新されます。ダウンロードしたファイルで置き換えることもできます。
+          </p>
+          <textarea class="cms-output" id="cms-output" rows="18" readonly></textarea>
+          <div class="cta-buttons">
+            <button type="button" class="button" id="cms-copy">コピーする</button>
+            <button type="button" class="button button-sub" id="cms-download">cms-data.js をダウンロード</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a href="index.html" class="footer-logo">
+      <img src="images/logo.png" alt="団体ロゴ">
+      <span>きゃんばしーず</span>
+    </a>
+
+    <p>メール：canvaseeds430@gmail.com</p>
+
+    <div class="footer-links">
+      <a href="https://instagram.com/canvaseeds" target="_blank">
+        Instagram
+      </a>
+    </div>
+
+    <div class="footer-links">
+      <a href="guideline.html">ガイドライン</a>
+      <a href="contact.html">お問い合わせ</a>
+    </div>
+
+    <small>&copy; 2026 きゃんばしーず. All Rights Reserved.</small>
+  </footer>
+
+  <button class="top-button" type="button" aria-label="ページ上部へ戻る">↑</button>
+  <script src="js/cms-data.js"></script>
+  <script src="js/cms-admin.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
