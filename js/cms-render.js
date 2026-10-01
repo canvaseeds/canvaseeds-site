@@ -38,8 +38,16 @@
     return `<a href="${escapeHtml(href)}" class="text-link">${label}</a>`;
   };
 
+  const renderImage = (post, basePath) => {
+    const image = normalizeUrl(post.image, basePath);
+    return image
+      ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(post.alt || post.title)}">`
+      : "";
+  };
+
   const renderNewsItem = (post, basePath) => `
     <article class="news-item cms-item">
+      ${renderImage(post, basePath)}
       <div class="news-meta">
         <time datetime="${escapeHtml(post.date)}">${escapeHtml(formatDate(post.date))}</time>
         <span class="news-category">${escapeHtml(post.category || "お知らせ")}</span>
@@ -51,10 +59,7 @@
   `;
 
   const renderActivityItem = (post, basePath) => {
-    const image = normalizeUrl(post.image, basePath);
-    const imageHtml = image
-      ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(post.alt || post.title)}">`
-      : "";
+    const imageHtml = renderImage(post, basePath);
 
     return `
       <article class="report-item cms-item">

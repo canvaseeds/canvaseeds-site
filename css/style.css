@@ -427,7 +427,8 @@ a {
 
 .report-highlight img,
 .report-item img,
-.blog-item img {
+.blog-item img,
+.news-item img {
   width: 100%;
   aspect-ratio: 4 / 3;
   border-radius: 6px;
@@ -809,6 +810,7 @@ a {
 
   .blog-item img,
   .report-item img,
+  .news-item img,
   .member-card img {
     margin: 0 auto 16px;
   }
