@@ -435,6 +435,11 @@ a {
   object-fit: cover;
 }
 
+.cms-item img {
+  background: var(--sub-color);
+  object-fit: contain;
+}
+
 .report-highlight h3 {
   margin: 0 0 12px;
   color: var(--main-dark);
