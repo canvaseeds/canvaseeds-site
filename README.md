@@ -87,16 +87,6 @@ window.CanvaseedsCMS = {
 
 既存のページをコピーして作るのが一番簡単です。
 
-```text
-news/2026-1/news-20260525.html
-news/2026-2/news-20261001-1.html
-```
-
-新しく作る時は、日付や時期に合わせて上半期なら`news/20xx-1`に下半期なら`news/20xx-2`にファイルを追加します。
-
-```text
-news/2026-2/news-20261010.html
-```
 
 詳細ページを作ったら、主に次の部分を書き換えます。
 
@@ -116,7 +106,7 @@ news/2026-2/news-20261010.html
   date: "2026-10-10",
   category: "イベント",
   excerpt: "一覧に表示する概要文",
-  url: "news/2026-2/news-20261010.html",
+  url: "news/news-20261010.html",
   featured: true,
   image: "images/parkProject.png",
   alt: "イベントの様子"
