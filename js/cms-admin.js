@@ -1,22 +1,62 @@
 (function () {
   const storageKey = "canvaseeds-cms-posts";
   const initialPosts = (window.CanvaseedsCMS && window.CanvaseedsCMS.posts) || [];
+  const baselineKey = `${storageKey}-baseline`;
+  const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+  const postKey = (post) => post.url ? `${post.type}:${post.url}` : post.id;
   let posts = loadPosts();
+  savePosts();
 
   function loadPosts() {
-    const saved = localStorage.getItem(storageKey);
-    if (!saved) return initialPosts.slice();
-
     try {
-      const parsed = JSON.parse(saved);
-      return Array.isArray(parsed) ? parsed : initialPosts.slice();
+      const saved = JSON.parse(localStorage.getItem(storageKey) || "null");
+      if (!Array.isArray(saved)) return initialPosts.slice();
+      const baseline = JSON.parse(localStorage.getItem(baselineKey) || "null");
+      const previous = new Map((Array.isArray(baseline) ? baseline : []).map((post) => [postKey(post), post]));
+      const drafts = new Map(saved.map((post) => [postKey(post), post]));
+      const publishedKeys = new Set(initialPosts.map(postKey));
+      const merged = [];
+
+      initialPosts.forEach((published) => {
+        const key = postKey(published);
+        const before = previous.get(key);
+        const draft = drafts.get(key);
+        // Keep explicit local deletions when a baseline is available.
+        if (before && !draft) return;
+        if (!before || !draft) {
+          // Legacy saves have no baseline: current published fields win.
+          merged.push({ ...draft, ...published });
+          return;
+        }
+        const post = { ...published };
+        new Set([...Object.keys(before), ...Object.keys(draft)]).forEach((field) => {
+          // Preserve local edits unless the published field also changed.
+          if (!same(draft[field], before[field]) && same(published[field], before[field])) {
+            if (Object.prototype.hasOwnProperty.call(draft, field)) post[field] = draft[field];
+            else delete post[field];
+          }
+        });
+        merged.push(post);
+      });
+      saved.forEach((draft) => {
+        const key = postKey(draft);
+        if (!publishedKeys.has(key) && (!previous.has(key) || !same(draft, previous.get(key)))) {
+          merged.push(draft);
+        }
+      });
+      return merged;
     } catch (error) {
       return initialPosts.slice();
     }
   }
 
   function savePosts() {
-    localStorage.setItem(storageKey, JSON.stringify(posts));
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(posts));
+      localStorage.setItem(baselineKey, JSON.stringify(initialPosts));
+    } catch (error) {
+      // Editing and exporting remain available when browser storage is blocked.
+    }
   }
 
   function slugify(value) {
@@ -95,7 +135,9 @@
       if (image) post.image = image;
       if (alt) post.alt = alt;
 
-      posts = posts.filter((item) => item.id !== post.id).concat(post);
+      const existing = posts.find((item) => postKey(item) === postKey(post));
+      if (existing) post.id = existing.id;
+      posts = posts.filter((item) => item.id !== post.id && postKey(item) !== postKey(post)).concat(post);
       savePosts();
       form.reset();
       document.querySelector("#cms-featured").checked = true;
@@ -112,7 +154,7 @@
 
     resetButton.addEventListener("click", () => {
       posts = initialPosts.slice();
-      localStorage.removeItem(storageKey);
+      savePosts();
       render();
     });
 

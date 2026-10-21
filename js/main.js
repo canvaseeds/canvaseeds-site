@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // お問い合わせフォームの入力チェック
-  const contactForm = document.querySelector(".contact-form");
+  const contactForm = document.querySelector(".contact-form:not(#cms-form)");
 
   if (contactForm) {
     contactForm.addEventListener("submit", (event) => {
